@@ -58,13 +58,13 @@ def extract_vulnerable_versions(cpe):
         version_info = f"{additional_qualifiers}"  
         return version_info   
     elif 'versionStartIncluding' in cpe and 'versionEndIncluding' in cpe:
-        version_info = f"Da {cpe['versionStartIncluding']} a {cpe['versionEndIncluding']} (inclusa)"
+        version_info = f"From {cpe['versionStartIncluding']} a {cpe['versionEndIncluding']} (included)"
     elif 'versionStartIncluding' in cpe and 'versionEndExcluding' in cpe:
-        version_info = f"Da {cpe['versionStartIncluding']} a {cpe['versionEndExcluding']} (esclusa)"
+        version_info = f"From {cpe['versionStartIncluding']} a {cpe['versionEndExcluding']} (excluded)"
     elif 'versionEndIncluding' in cpe and 'versionStartIncluding' not in cpe:
-        version_info = f"Fino a {cpe['versionEndIncluding']} (inclusa)"
+        version_info = f"To a {cpe['versionEndIncluding']} (included)"
     elif 'versionEndExcluding' in cpe and 'versionStartIncluding' not in cpe:
-        version_info = f"Fino a {cpe['versionEndExcluding']} (esclusa)"
+        version_info = f"To a {cpe['versionEndExcluding']} (excluded)"
             
     return version_info
     
